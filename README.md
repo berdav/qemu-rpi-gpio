@@ -2,7 +2,7 @@
 Simulate GPIO in qemu-based Raspberry Pi
 
 ## How it works
-The script (`virtual-gpio.py`) present in this repository interacts with qemu 
+The script (`virtual-gpio`) present in this repository interacts with qemu 
 using the built-in `qtest` protocol.
 
 Wrapping the protocol and interacting with the memory of the guest operating
