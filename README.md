@@ -35,7 +35,7 @@ sudo apt install p7zip-full
 ## Setup
 Download a raspbian image using
 ```
-./setup.sh
+./qemu-pi-setup/setup.sh
 ```
 
 After this operation, execute the script to load the unix socket and make it
@@ -47,7 +47,7 @@ available to qemu
 You will be prompted to an interactive shell, you can find the commands available
 in the *Interacting with gpios* section.
 
-In another terminal execute the `./run.sh` script, this will execute a virtual
+In another terminal execute the `./qemu-pi-setup/run.sh` script, this will execute a virtual
 raspberry pi and attach it to the gpio application.
 
 If you close the raspberry pi you can reload the socket using the command
