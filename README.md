@@ -8,7 +8,7 @@ using the built-in `qtest` protocol.
 Wrapping the protocol and interacting with the memory of the guest operating
 system, it can set or reset the various GPIOs.
 
-**Note:** Vanilla qemu (5.1.3) will not handle GPIO interrupts, therefore
+**Note:** Vanilla qemu (5.1.93) will not handle GPIO interrupts, therefore
 loading `/sys/class/gpio/gpio$N/direction` and wait for an interrupt
 will not do anything.
 
