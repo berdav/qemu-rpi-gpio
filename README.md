@@ -12,7 +12,7 @@ system, it can set or reset the various GPIOs.
 loading `/sys/class/gpio/gpio$N/direction` and wait for an interrupt
 will not do anything.
 
-To enable interrupt support you need to download and compile
+To enable interrupt support you'll need to download and compile
 [this qemu fork](https://github.com/berdav/qemu).
 
 ## Installation
