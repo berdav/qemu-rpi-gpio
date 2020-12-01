@@ -9,7 +9,7 @@ Wrapping the protocol and interacting with the memory of the guest operating
 system, it can set or reset the various GPIOs.
 
 **Note:** Vanilla qemu (5.1.93) will not handle GPIO interrupts, therefore
-loading `/sys/class/gpio/gpio$N/direction` and wait for an interrupt
+loading `/sys/class/gpio/gpio$N/direction` and waiting for an interrupt
 will not do anything.
 
 To enable interrupt support you'll need to download and compile
