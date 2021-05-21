@@ -2,7 +2,7 @@
 Simulate GPIO in qemu-based Raspberry Pi
 
 ## How it works
-The script (`virtual-gpio`) present in this repository interacts with qemu 
+The script (`qemu-rpi-gpio`) present in this repository interacts with qemu 
 using the built-in `qtest` protocol.
 
 Wrapping the protocol and interacting with the memory of the guest operating
@@ -41,7 +41,7 @@ Download a raspbian image using
 After this operation, execute the script to load the unix socket and make it
 available to qemu
 ```
-./virtual-gpio
+./qemu-rpi-gpio
 ```
 
 You will be prompted to an interactive shell, you can find the commands available
@@ -51,7 +51,7 @@ In another terminal execute the `./qemu-pi-setup/run.sh` script, this will execu
 raspberry pi and attach it to the gpio application.
 
 If you close the raspberry pi you can reload the socket using the command
-`reload` in the virtual-gpio prompt.
+`reload` in the qemu-rpi-gpio prompt.
 
 ## Interacting with gpios
 
@@ -63,7 +63,7 @@ $ sudo su -
 # echo in >/sys/class/gpio/direction
 ```
 
-The main commands in the `virtual-gpio` application are:
+The main commands in the `qemu-rpi-gpio` application are:
 
 | command     | description                             | example |
 |-------------|-----------------------------------------|---------|
