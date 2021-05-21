@@ -8,7 +8,7 @@ with open("README.md") as f:
 setup(
     name             = 'qemu-rpi-gpio',
     scripts          = [ "qemu-rpi-gpio" ],
-    version          = '0.2',
+    version          = '0.3',
     license          = 'GPLv3',
     description      = 'Simulate GPIOs in qemu-based Raspberry PI',
     long_description = description,
@@ -16,7 +16,7 @@ setup(
     author           = 'Davide Berardi',
     author_email     = 'berardi.dav@gmail.com',
     url              = 'https://github.com/berdav/qemu-rpi-gpio',
-    download_url     = 'https://github.com/berdav/qemu-rpi-gpio/archive/v02.tar.gz',
+    download_url     = 'https://github.com/berdav/qemu-rpi-gpio/archive/refs/tags/v0.3.zip',
     keywords         = [ 'raspberry-pi', 'gpio', 'virtualization', 'qemu' ],
     install_requires = [
         'pexpect'
