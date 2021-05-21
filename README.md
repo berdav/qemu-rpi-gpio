@@ -16,7 +16,10 @@ To enable interrupt support you'll need to download and compile
 [this qemu fork](https://github.com/berdav/qemu).
 
 ## Installation
-*Wait a little time, I'm pushing to pip :)*
+You can install the script via pip with
+```
+pip install qemu-rpi-gpio
+```
 
 ## Prereqisites
 You need `socat`, `python3` and `pexpect` library to use this
