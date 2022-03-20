@@ -78,7 +78,7 @@ class VGPIOManager(object):
     def get_gpio_location(self, num):
         if num > 54 or num < 0:
             return 0
-        return GPIO_RANGE[0] + int(num / 32)
+        return GPIO_RANGE[0] + int(num / 32) * 4
 
     def set(self, gpionum, value):
         m = self.get_gpio_location(gpionum)
