@@ -15,7 +15,7 @@ setup_dependencies() {
 download_pi_os() {
 	TARGET="$1"
 	wget -O "$(basename $TARGET).zip" -c "$TARGET" >&2
-	IMGNAME="$(7z l $(basename $TARGET).zip | awk '/img/{print $NF}')"
+	IMGNAME="$(7z l $(basename $TARGET).zip | awk '/  raspios/{print $NF}')"
 	if [ ! -f "$IMGNAME" ]; then
 		7z x  "$(basename $TARGET).zip" > /dev/null
 	fi

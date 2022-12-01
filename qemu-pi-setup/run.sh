@@ -25,11 +25,12 @@ ENABLEQTEST=true
 #ENABLEQTEST=false
 QTESTSOCKET="/tmp/tmp-gpio.sock"
 
-IMGNAME="$(7z l "$TARGET" | awk '/\.img/{print $NF}')"
+IMGNAME="$(7z l "$TARGET" | awk '/  raspios/{print $NF}')"
 echo "[ ] root image: $IMGNAME"
 
 BOOTPARAMS=""
 # Console and system prints
+#BOOTPARAMS="$BOOTPARAMS kgdboc=ttyAMA0,115200"
 BOOTPARAMS="$BOOTPARAMS console=ttyAMA0,115200"
 BOOTPARAMS="$BOOTPARAMS earlyprintk"
 BOOTPARAMS="$BOOTPARAMS loglevel=8"
@@ -38,6 +39,7 @@ BOOTPARAMS="$BOOTPARAMS rw"
 BOOTPARAMS="$BOOTPARAMS root=/dev/mmcblk0p2"
 BOOTPARAMS="$BOOTPARAMS rootwait"
 BOOTPARAMS="$BOOTPARAMS rootfstype=ext4"
+#BOOTPARAMS="$BOOTPARAMS init=/bin/sh"
 
 NETPARAMS=""
 
@@ -61,12 +63,12 @@ fi
 SERIAL=""
 SERIAL="$SERIAL -curses"
 SERIAL="$SERIAL -serial stdio"
-#SERIAL="$SERIAL -monitor stdio"
+SERIAL="$SERIAL -monitor unix:/tmp/monitor.sock"
 
 "$QEMU"                                                   \
 	-curses                                           \
 	$SERIAL                                           \
-	-M       raspi3                                   \
+	-M       raspi3b                                  \
 	-dtb     "$ROOTFS/bcm2710-rpi-3-b-plus.dtb"       \
 	-kernel  "$ROOTFS/kernel8.img"                    \
 	-append  "$BOOTPARAMS"                            \
